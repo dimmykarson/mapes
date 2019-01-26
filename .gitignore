@@ -4,3 +4,5 @@ MANIFEST
 build
 dist
 .idea
+exams/__pycache__/
+*__pycache__/

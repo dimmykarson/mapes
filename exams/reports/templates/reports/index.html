@@ -1,0 +1,16 @@
+
+{% extends 'template_base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% block content %}
+    <table class="datatable table-striped">
+        <thead>
+            <th>{% trans "nome_medico" %}</th>
+            <th>{% trans "numero_guia_consulta" %}</th>
+            <th>{% trans "data_consulta" %}</th>
+            <th>{% trans "valor_consulta" %}</th>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+{% endblock %}

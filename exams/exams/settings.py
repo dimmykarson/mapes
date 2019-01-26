@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+from unipath import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,6 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+PROJECT_DIR = Path(__file__).parent
+STATIC_ROOT = PROJECT_DIR.child('static')
 
 # Application definition
 
@@ -53,10 +56,11 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'exams.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(PROJECT_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -108,15 +112,18 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
+LANGUAGE_CODE = 'pt-br'
 USE_I18N = True
-
 USE_L10N = True
-
+LANGUAGE_SESSION_KEY = 'pt-BR'
+TIME_ZONE = 'America/Sao_Paulo'
 USE_TZ = True
+USE_I18N = True
+LANGUAGES = (
+    ('en', u'English'),
+    ('pt-br', u'Português'),
+)
+LOCALE_PATHS = (PROJECT_DIR.child('locale'),)
 
 
 # Static files (CSS, JavaScript, Images)
