@@ -2,6 +2,10 @@
 {% extends 'template_base.html' %}
 {% load i18n %}
 {% load staticfiles %}
+{% block extra_head %}
+    <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.dataTables.css' %}" />
+{% endblock %}
 {% block content %}
     <table class="datatable table-striped">
         <thead>
@@ -13,4 +17,16 @@
         <tbody>
         </tbody>
     </table>
+{% endblock %}
+{% block js_scripts %}
+    <script>
+        $(document).ready(function() {
+            var oTable = $('.datatable').dataTable({
+                "oLanguage": oLanguages,
+                "bProcessing": true,
+                "bServerSide": true,
+                "sAjaxSource": '{% url 'json_doctor_production' %}',
+            });
+        });
+    </script>
 {% endblock %}
