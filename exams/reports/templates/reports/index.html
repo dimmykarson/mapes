@@ -8,23 +8,45 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 
+<link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
+
+
 {% endblock %}
 {% block content %}
 <div class="row">
         <div class="col-xl-12">
+            <form>
+                <fieldset class="fieldset-border">
+                <legend class="fieldset-border">{% trans 'Filters'%}</legend>
+                <div class="row">
+                    <div class="control-group col-xl-6">
+                        <label class="control-label input-label" for="selectbox_doctors">{% trans 'Doctor' %} :</label>
+                        <select class="form-control" id="selectbox_doctors" name="selectbox_doctor">
+                        </select>
+                    </div>
+                    <div class="control-group  col-xl-6">
+                        <label class="control-label input-label" for="date_conference">{% trans 'Date' %} :</label>
+                        <input type="date" class="form-control" id="date_conference" >
+                    </div>
+                </div>
+                <div class="control-group text-center" style="padding-top: 0.8em">
+                    <button type="submit" class="btn btn-primary">{% trans 'Search' %}</button>
+                </div>
+            </fieldset>
 
-    <table class="datatable table table-striped table-bordered" style="width:100%">
-        <thead>
-            <th>{% trans "nome_medico" %}</th>
-            <th>{% trans "numero_guia_consulta" %}</th>
-            <th>{% trans "data_consulta" %}</th>
-            <th>{% trans "valor_consulta" %}</th>
-            <th>{% trans "Gasto por consulta" %}</th>
-            <th>{% trans "Qtde Exames" %}</th>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
+                <table class="datatable table table-striped table-bordered" style="width:100%">
+                    <thead>
+                        <th>{% trans "nome_medico" %}</th>
+                        <th>{% trans "numero_guia_consulta" %}</th>
+                        <th>{% trans "data_consulta" %}</th>
+                        <th>{% trans "valor_consulta" %}</th>
+                        <th>{% trans "Gasto por consulta" %}</th>
+                        <th>{% trans "Qtde Exames" %}</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </form>
 </div>
 </div>
 {% endblock %}
@@ -33,15 +55,25 @@
         $(document).ready(function() {
             var oTable = $('.datatable').dataTable({
                 "oLanguage": oLanguages,
-                "pagingType": "full_numbers",
                 "bProcessing": true,
                 "bServerSide": true,
                 "searching": false,
-                paging: true,
-                 "ordering": false,
+                "length":false,
                 "sAjaxSource": '{% url 'json_doctor_production' %}',
 
             });
+            $('.dataTables_length').hide(); //Problema 1, issue reportado do framework de datatable-view
+            
+        });
+
+        $(document).ready(function() {
+            console.log('Consultando doutores');
+            $.ajax({                      
+                url: '{% url 'load_doctors' %}',                 
+                success: function (data) {
+                    $("#selectbox_doctors").html(data);
+                }
+              });
         });
     </script>
 {% endblock %}
