@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django import forms
 from reports.models import *
 from django.utils.translation import gettext as _

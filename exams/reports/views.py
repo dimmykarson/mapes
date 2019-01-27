@@ -1,3 +1,4 @@
+# -*- coding: utf 8 -*-
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import  UserCreationForm
 from django.http import HttpResponse
@@ -7,6 +8,7 @@ from django.db.models import Q, Sum, Count
 from django.db.models.functions import Coalesce
 import locale
 from .forms import DoctorProductionForm
+
 
 
 def index(request):
