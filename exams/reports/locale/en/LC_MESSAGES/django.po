@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-26 21:12-0200\n"
+"POT-Creation-Date: 2019-01-27 14:00-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,46 +18,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\reports\templates\reports\index.html:11
+#: .\reports\forms.py:11
+msgid "Doctor"
+msgstr ""
+
+#: .\reports\forms.py:13
+msgid "All doctors"
+msgstr ""
+
+#: .\reports\forms.py:15
+msgid "Period"
+msgstr ""
+
+#: .\reports\templates\reports\index.html:40
+msgid "Search"
+msgstr ""
+
+#: .\reports\templates\reports\index.html:46
 msgid "nome_medico"
 msgstr ""
 
-#: .\reports\templates\reports\index.html:12
+#: .\reports\templates\reports\index.html:47
 msgid "numero_guia_consulta"
 msgstr ""
 
-#: .\reports\templates\reports\index.html:13
+#: .\reports\templates\reports\index.html:48
 msgid "data_consulta"
 msgstr ""
 
-#: .\reports\templates\reports\index.html:14
+#: .\reports\templates\reports\index.html:49
 msgid "valor_consulta"
 msgstr ""
 
-#: .\reports\templates\template_base.html:13
+#: .\reports\templates\reports\index.html:50
+msgid "Gasto por consulta"
+msgstr ""
+
+#: .\reports\templates\reports\index.html:51
+msgid "Qtde Exames"
+msgstr ""
+
+#: .\reports\templates\selects\doctors.html:2
+msgid "Select a doctor"
+msgstr ""
+
+#: .\reports\templates\template_base.html:20
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
 msgstr ""
 
-#: .\reports\templates\template_base.html:14
+#: .\reports\templates\template_base.html:21
 msgid "No entries to show"
 msgstr ""
 
-#: .\reports\templates\template_base.html:15
+#: .\reports\templates\template_base.html:22
 msgid "(filtered from _MAX_ total entries)"
 msgstr ""
 
-#: .\reports\templates\template_base.html:16
+#: .\reports\templates\template_base.html:23
 msgid "Show _MENU_ entries"
 msgstr ""
 
-#: .\reports\templates\template_base.html:17
+#: .\reports\templates\template_base.html:24
 msgid "Processing"
 msgstr ""
 
-#: .\reports\templates\template_base.html:18
-msgid "Filter records:"
+#: .\reports\templates\template_base.html:25
+msgid "Filter records"
 msgstr ""
 
-#: .\reports\templates\template_base.html:19
+#: .\reports\templates\template_base.html:26
 msgid "No data to show"
 msgstr ""

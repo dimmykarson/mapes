@@ -12,6 +12,9 @@ class Consulta(models.Model):
     class Meta:
         db_table = 'consulta'
 
+    def __str__(self):
+        return self.nome_medico
+
 
 class Exame(models.Model):
     cod_exame = models.IntegerField(primary_key=True)

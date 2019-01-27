@@ -1,6 +1,7 @@
 {% extends 'template_base.html' %}
 {% load i18n %}
 {% load staticfiles %}
+{% load widget_tweaks %}
 {% block extra_head %}
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
@@ -15,20 +16,26 @@
 {% block content %}
 <div class="row">
         <div class="col-xl-12">
-            <form>
+            <form method="POST">
                 <fieldset class="fieldset-border">
-                <legend class="fieldset-border">{% trans 'Filters'%}</legend>
+                <legend class="fieldset-border">{% trans 'Filters' %}</legend>
                 <div class="row">
-                    <div class="control-group col-xl-6">
-                        <label class="control-label input-label" for="selectbox_doctors">{% trans 'Doctor' %} :</label>
-                        <select class="form-control" id="selectbox_doctors" name="selectbox_doctor">
-                        </select>
-                    </div>
-                    <div class="control-group  col-xl-6">
-                        <label class="control-label input-label" for="date_conference">{% trans 'Date' %} :</label>
-                        <input type="date" class="form-control" id="date_conference" >
-                    </div>
+                    {% for field in form.visible_fields  %}
+                        <div class="control-group col-xl-6">
+                            <label class="control-label input-label">{{ field.label_tag }}</label>
+                            {% render_field field class+="form-control" %}
+                        </div>
+                        {% if field.errors %}
+                            <br/>
+                            {% for error in field.errors %}
+                                <div class="alert alert-danger alert-dismissable">
+                                    <p><strong>{{ error|escape }}</strong></p>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
                 </div>
+                
                 <div class="control-group text-center" style="padding-top: 0.8em">
                     <button type="submit" class="btn btn-primary">{% trans 'Search' %}</button>
                 </div>
@@ -53,27 +60,29 @@
 {% block js_scripts %}
     <script>
         $(document).ready(function() {
+            console.log($('#id_doctors'))
+            doc_cod = $('#id_doctors').val()
+            period = $('#id_period').val()
+            console.log(doc_cod, period)
             var oTable = $('.datatable').dataTable({
                 "oLanguage": oLanguages,
                 "bProcessing": true,
                 "bServerSide": true,
                 "searching": false,
                 "length":false,
-                "sAjaxSource": '{% url 'json_doctor_production' %}',
+                ajax: {
+                    url: '{% url 'json_doctor_production' %}',
+                    data: function (data) {
+                        data.doctor_cod = doc_cod;
+                        data.period = period;
+                    },
+                },
 
             });
             $('.dataTables_length').hide(); //Problema 1, issue reportado do framework de datatable-view
             
         });
 
-        $(document).ready(function() {
-            console.log('Consultando doutores');
-            $.ajax({                      
-                url: '{% url 'load_doctors' %}',                 
-                success: function (data) {
-                    $("#selectbox_doctors").html(data);
-                }
-              });
-        });
+        
     </script>
 {% endblock %}
