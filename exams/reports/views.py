@@ -8,6 +8,7 @@ from django.db.models.functions import Coalesce
 import locale
 from .forms import DoctorProductionForm
 
+
 def index(request):
 	form = DoctorProductionForm(request.POST or None)
 	if form.is_valid():
@@ -28,8 +29,7 @@ class DoctorProductionJSON(BaseDatatableView):
 			qs = qs.filter(cod_medico=doc_cod)
 		if period:
 			qs = qs.filter(data_consulta=period)
-		qs = qs\
-		.annotate(gasto=Coalesce(Sum('exame__valor_exame'), 0), qt_exames=Count('exame'))
+		qs = qs.annotate(gasto=Coalesce(Sum('exame__valor_exame'), 0), qt_exames=Count('exame'))
 		return qs
 
 	def prepare_results(self, qs):

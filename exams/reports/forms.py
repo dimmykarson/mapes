@@ -9,4 +9,5 @@ class DoctorProductionForm(forms.Form):
 		widget=forms.Select, 
 		queryset=doctors_aux, 
 		to_field_name="cod_medico")
-	period = forms.DateField(required=False, label=_('Period').title(), widget=forms.TextInput(attrs={'type':'date'}),)
+	period = forms.DateField(required=False, label=_('Period').title(), 
+		widget=forms.TextInput(attrs={'type':'date'}),)

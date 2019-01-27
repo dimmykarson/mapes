@@ -1,26 +1,46 @@
-#: .\reports\forms.py:11
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-27 15:28-0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\reports\forms.py:8
 msgid "Doctor"
 msgstr "Médico"
 
-#: .\reports\forms.py:13
-msgid "All doctors"
-msgstr "Todos os médicos"
-
-#: .\reports\forms.py:15
+#: .\reports\forms.py:12
 msgid "Period"
 msgstr "Período"
 
+#: .\reports\templates\reports\index.html:21
+msgid "Filters"
+msgstr "Filtros"
+
 #: .\reports\templates\reports\index.html:40
 msgid "Search"
-msgstr "Busca"
+msgstr "Buscar"
 
 #: .\reports\templates\reports\index.html:46
 msgid "nome_medico"
-msgstr "Nome do Médico"
+msgstr "Nome do médico"
 
 #: .\reports\templates\reports\index.html:47
 msgid "numero_guia_consulta"
-msgstr "Número da guia da consulta"
+msgstr "Número da Guia da Consulta"
 
 #: .\reports\templates\reports\index.html:48
 msgid "data_consulta"
@@ -38,10 +58,6 @@ msgstr "Gasto por consulta"
 msgid "Qtde Exames"
 msgstr "Qtde Exames"
 
-#: .\reports\templates\selects\doctors.html:2
-msgid "Select a doctor"
-msgstr "Seleciona um médico"
-
 #: .\reports\templates\template_base.html:20
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
 msgstr "Exibindo _START_ até _END_ de _TOTAL_ entradas"
@@ -52,15 +68,15 @@ msgstr "Nenhuma entrada para exibir"
 
 #: .\reports\templates\template_base.html:22
 msgid "(filtered from _MAX_ total entries)"
-msgstr "(filtrada de _MAX_ entradas)"
+msgstr "(filtrado de _MAX_ entradas)"
 
 #: .\reports\templates\template_base.html:23
 msgid "Show _MENU_ entries"
-msgstr "Mostrar _MENU_ entradas"
+msgstr "Exibindo _MENU_ entradas"
 
 #: .\reports\templates\template_base.html:24
 msgid "Processing"
-msgstr "Processando..."
+msgstr "Processando"
 
 #: .\reports\templates\template_base.html:25
 msgid "Filter records"
@@ -68,4 +84,4 @@ msgstr "Filtrar registros"
 
 #: .\reports\templates\template_base.html:26
 msgid "No data to show"
-msgstr "Nenhum dado para exibir"
+msgstr "Nenhum dado"
