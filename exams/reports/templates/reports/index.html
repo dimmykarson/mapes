@@ -1,31 +1,46 @@
-
 {% extends 'template_base.html' %}
 {% load i18n %}
 {% load staticfiles %}
 {% block extra_head %}
-    <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.dataTables.css' %}" />
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
 {% endblock %}
 {% block content %}
-    <table class="datatable table-striped">
+<div class="row">
+        <div class="col-xl-12">
+
+    <table class="datatable table table-striped table-bordered" style="width:100%">
         <thead>
             <th>{% trans "nome_medico" %}</th>
             <th>{% trans "numero_guia_consulta" %}</th>
             <th>{% trans "data_consulta" %}</th>
             <th>{% trans "valor_consulta" %}</th>
+            <th>{% trans "Gasto por consulta" %}</th>
+            <th>{% trans "Qtde Exames" %}</th>
         </thead>
         <tbody>
         </tbody>
     </table>
+</div>
+</div>
 {% endblock %}
 {% block js_scripts %}
     <script>
         $(document).ready(function() {
             var oTable = $('.datatable').dataTable({
                 "oLanguage": oLanguages,
+                "pagingType": "full_numbers",
                 "bProcessing": true,
                 "bServerSide": true,
+                "searching": false,
+                paging: true,
+                 "ordering": false,
                 "sAjaxSource": '{% url 'json_doctor_production' %}',
+
             });
         });
     </script>

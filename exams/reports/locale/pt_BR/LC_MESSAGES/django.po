@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-26 17:29-0200\n"
+"POT-Creation-Date: 2019-01-26 21:12-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,50 +18,51 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\reports\templates\reports\index.html:12
+#: .\reports\templates\reports\index.html:11
 msgid "nome_medico"
 msgstr "Nome do médico"
 
-#: .\reports\templates\reports\index.html:13
+#: .\reports\templates\reports\index.html:12
 msgid "numero_guia_consulta"
 msgstr "Número da Guia"
 
-#: .\reports\templates\reports\index.html:14
+#: .\reports\templates\reports\index.html:13
 msgid "data_consulta"
 msgstr "Data da consulta"
 
-#: .\reports\templates\reports\index.html:15
+#: .\reports\templates\reports\index.html:14
 msgid "valor_consulta"
 msgstr "Valor da Consulta"
 
-#: .\reports\templates\template_base.html:16
+#: .\reports\templates\template_base.html:13
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
 msgstr "Mostrando _START_ até _END_ de _TOTAL_ entradas"
 
-#: .\reports\templates\template_base.html:17
+#: .\reports\templates\template_base.html:14
 msgid "No entries to show"
 msgstr "Nenhuma dado encontrado"
 
-#: .\reports\templates\template_base.html:18
+#: .\reports\templates\template_base.html:15
 msgid "(filtered from _MAX_ total entries)"
 msgstr "(filtrando de _MAX_ entradas)"
 
-#: .\reports\templates\template_base.html:19
+#: .\reports\templates\template_base.html:16
 msgid "Show _MENU_ entries"
 msgstr "Mostrar _MENU_"
 
-#: .\reports\templates\template_base.html:20
+#: .\reports\templates\template_base.html:17
 msgid "Processing"
 msgstr "Processando..."
 
-#: .\reports\templates\template_base.html:21
-msgid "Filter records:"
+#: .\reports\templates\template_base.html:18
+#, fuzzy
+#| msgid "Filter records"
+msgid "Filter records"
 msgstr "Filtrar"
 
-#: .\reports\templates\template_base.html:22
+#: .\reports\templates\template_base.html:19
 msgid "No data to show"
 msgstr "Nenhum dado para exibir"
 
-
-msgid "Search"
-msgstr "Busca"
+#~ msgid "Search"
+#~ msgstr "Busca"
