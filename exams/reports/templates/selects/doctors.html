@@ -1,5 +1,0 @@
-{% load i18n %}
-<option value="">{% trans 'Select a doctor' %}</option>
-{% for doc in doctors %}
-	<option value="{{doc.cod_medico}}">{{ doc.nome_medico }} </option>
-{% endfor %}

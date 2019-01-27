@@ -13,12 +13,7 @@ def index(request):
 	if form.is_valid():
 		print(form.cleaned_data)
 	return render(request, 'reports/index.html', {'form':form})
-
-def load_doctors(request):
-    doctors = Consulta.objects.distinct('cod_medico', 'nome_medico').order_by('nome_medico')
-    return render(request, 'selects/doctors.html', {'doctors': doctors})
-
-
+	
 class DoctorProductionJSON(BaseDatatableView):
 	columns = ['nome_medico', 'numero_guia_consulta', 'data_consulta', 'valor_consulta', 'gasto', 'qt_exames']
 	order_columns = ['gasto', 'nome_medico', 'numero_guia_consulta', 'data_consulta', 'valor_consulta', 'qt_exames']

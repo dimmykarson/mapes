@@ -1,5 +1,5 @@
 from django import forms
-from .models import *
+from reports.models import *
 from django.utils.translation import gettext as _
 
 doctors_aux = Consulta.objects.distinct('cod_medico', 'nome_medico').order_by('nome_medico')
